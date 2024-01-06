@@ -3,25 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-hex: #1c1e15; /* finch-950 */
+  --heading-border: #1c1e1549; /* finch-950 */
+  --background-hex: #d4d6c0; /* finch-200 */
+  --link-color: #414bea;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-hex: #e8e9de; /* finch-100 */
+    --background-hex: #383b2c; /* finch-900 */
+    --heading-border: #e8e9de49; /* finch-100 */
+    --link-color: #7d97fc;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-hex);
+  background: var(--background-hex);
+}
+
+#markdownContent h1 {
+  font-size: 4vw;
+  border-bottom: 2px solid var(--heading-border);
+}
+#markdownContent h2 {
+  font-size: 3vw;
+}
+#markdownContent h3 {
+  font-size: 2vw;
+}
+#markdownContent h4 {
+  font-size: 1.5vw;
+}
+#markdownContent h5 {
+  font-size: 1vw;
+}
+#markdownContent pre {
+  font-size: 0.8vw;
+  font-family: monospace !important;
+}
+#markdownContent p,em,strong {
+  font-size: 0.9vw
+}
+#markdownContent a {
+  font-size: 0.9vw;
+  color: var(--link-color);
+}
+#markdownContent a:hover {
+  font-weight: italic;
+  text-decoration: underline;
 }
