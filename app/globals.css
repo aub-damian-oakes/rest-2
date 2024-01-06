@@ -37,21 +37,42 @@ body {
   font-size: 1.5vw;
 }
 #markdownContent h5 {
-  font-size: 1vw;
+  font-size: 1.25vw;
 }
 #markdownContent pre {
-  font-size: 0.8vw;
+  font-size: 0.9vw;
   padding: 2rem;
+  background: #00000034;
+  border-radius: 0.5rem;
   font-family: monospace !important;
 }
 #markdownContent p,em,strong {
-  font-size: 0.9vw
+  font-size: 1vw
 }
 #markdownContent a {
-  font-size: 0.9vw;
+  font-size: 1vw;
   color: var(--link-color);
 }
 #markdownContent a:hover {
   font-weight: italic;
   text-decoration: underline;
+}
+#markdownContent {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+/* width */
+#markdownContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+#markdownContent::-webkit-scrollbar-track {
+  background: #00000000;
+}
+
+/* Handle on hover */
+#markdownContent::-webkit-scrollbar-thumb {
+  background: var(--foreground-hex);
+  border-radius: 12em;
 }

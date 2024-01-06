@@ -23,4 +23,7 @@ form!*
 
 #### This gives us much more control over what we can do on REST.   
 ## Better backend code.   
-This method lets us store all of the information 
+This method lets us store all of the information directly on the server REST
+uses. No more long waiting times for REST to sync up to Google Sheets, no more
+weird long names for responses. All data is handled on the server making it
+a lot quicker to find what you're looking for.

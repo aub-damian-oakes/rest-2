@@ -1,16 +1,13 @@
 import fs from "fs"
-import markdownit from "markdown-it"
 import Navbar from "@/components/Navbar"
-const md = markdownit()
+import FormContent from "@/components/FormContent"
+import { BeatLoader } from "react-spinners"
 
-
-const content = fs.readFileSync("LandingPage.md")
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <Navbar />
-      <div className="m-auto max-w-[50vw]" dangerouslySetInnerHTML={{__html: md.render(String(content))}} id="markdownContent"></div>
+    <main className="flex min-h-screen flex-col items-center overflow-y-hidden">
+      <FormContent />
     </main>
   )
 }
