@@ -41,6 +41,7 @@ body {
 }
 #markdownContent pre {
   font-size: 0.8vw;
+  padding: 2rem;
   font-family: monospace !important;
 }
 #markdownContent p,em,strong {
