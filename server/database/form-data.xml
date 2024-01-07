@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form>
+        <title>First form</title>
+        <file>SampleForm</file>
+        <keywords>
+            <word>my</word>
+            <word>first</word>
+            <word>form</word>
+            <word>data</word>
+            <word>wow</word>
+            <word>payment terminal</word>
+        </keywords>
+        <locations>
+            <location>
+                <main>IT</main>
+                <subcategory>Register</subcategory>
+                <nextsub>Software</nextsub>
+            </location>
+        </locations>
+        <meta>
+            <popularity>0</popularity>
+            <author>Damian Oakes</author>
+            <date>1/6/24</date>
+        </meta>
+    </form>
+    <form>
+        <title>Second form</title>
+        <file>LandingPage</file>
+        <keywords>
+            <word>my</word>
+            <word>first</word>
+            <word>form</word>
+            <word>data</word>
+            <word>wow</word>
+            <word>purchase order</word>
+        </keywords>
+        <locations>
+            <location>
+                <main>Accounting</main>
+                <subcategory>Overage/Shortage</subcategory>
+            </location>
+        </locations>
+        <meta>
+            <popularity>1</popularity>
+            <author>Damian Smokes</author>
+            <date>1/5/24</date>
+        </meta>
+    </form>
+    <form>
+        <title>My new form</title>
+        <file>MyNewForm</file>
+        <keywords>
+            <word>My</word>
+            <word>New</word>
+            <word>form</word>
+        </keywords>
+        <locations></locations>
+        <meta>
+            <popularity>0</popularity>
+            <author>new</author>
+            <date>2024-01-06T21:34:12.104Z</date>
+        </meta>
+    </form>
+</forms>

@@ -28,7 +28,7 @@ export default function FormContent() {
     useEffect(() => {
         $.ajax({
             method: "GET",
-            url: `http://localhost:8080?form=${query || ""}`,
+            url: `http://localhost:8080?form=${encodeURI(query) || ""}`,
             success: (form) => {
                 setContent(form.form);
             }
@@ -36,7 +36,8 @@ export default function FormContent() {
     }, [query])
 
     return (
-        content ? <div className="mx-auto my-6 max-w-[70vw] overflow-y-scroll max-h-[80vh]" dangerouslySetInnerHTML={ {__html: md.render(content)} }  id="markdownContent"></div> : null
+        content ? <div className="mx-auto my-6 max-w-[70vw] 2xl:max-w-[67vw] 2xl:max-h-[86vh] overflow-y-scroll max-h-[80vh]" 
+        dangerouslySetInnerHTML={ {__html: md.render(content)} }  id="markdownContent"></div> : null
 
     )
 }

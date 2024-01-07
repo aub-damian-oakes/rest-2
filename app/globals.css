@@ -7,6 +7,10 @@
   --heading-border: #1c1e1549; /* finch-950 */
   --background-hex: #d4d6c0; /* finch-200 */
   --link-color: #414bea;
+  --thumb-hex: #1c1e1530;
+  --blockquote-hex: #e8e9de; /* finch-800 */
+  --blockquote-text-hex: #1c1e15; /* finch-950 */
+  --blockquote-border-hex: #6a704b; /* finch-600 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +19,10 @@
     --background-hex: #383b2c; /* finch-900 */
     --heading-border: #e8e9de49; /* finch-100 */
     --link-color: #7d97fc;
+    --thumb-hex: #e8e9de30;
+    --blockquote-hex: #80865c; /* finch-100 */
+    --blockquote-text-hex: #e8e9de; /* finch-800 */
+    --blockquote-border-hex: #1c1e15;
   }
 }
 
@@ -24,43 +32,103 @@ body {
 }
 
 #markdownContent h1 {
+  margin-bottom: 0.25em;
   font-size: 4vw;
   border-bottom: 2px solid var(--heading-border);
 }
+
 #markdownContent h2 {
+  margin-bottom: 0.25em;
   font-size: 3vw;
 }
+
 #markdownContent h3 {
+  margin-bottom: 0.25em;
   font-size: 2vw;
 }
+
 #markdownContent h4 {
+  margin-bottom: 0.25em;
   font-size: 1.5vw;
 }
+
+
 #markdownContent h5 {
+  margin-bottom: 0.25em;
   font-size: 1.25vw;
 }
+
 #markdownContent pre {
   font-size: 0.9vw;
   padding: 2rem;
   background: #00000034;
   border-radius: 0.5rem;
   font-family: monospace !important;
+  margin-bottom: 1.2em;
 }
+
 #markdownContent p,em,strong {
-  font-size: 1vw
+  font-size: 1vw;
+  margin-top: 0.5em;
 }
+
 #markdownContent a {
   font-size: 1vw;
   color: var(--link-color);
 }
+
 #markdownContent a:hover {
   font-weight: italic;
   text-decoration: underline;
 }
+
 #markdownContent {
   padding-left: 2em;
   padding-right: 2em;
 }
+
+#markdownContent li {
+  font-size: 1vw;
+}
+
+#markdownContent ul>li::before {
+  content: "•";
+  margin-right: 4px;
+  margin-left: 0.5vw;
+}
+
+#markdownContent ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+#markdownContent ol>li {
+  counter-increment: item;
+}
+
+#markdownContent ol>li::before {
+  content: counter(item)". ";
+  margin-left: 0.5vw;
+}
+
+#markdownContent blockquote {
+  background: var(--blockquote-hex);
+  color: var(--blockquote-text-hex);
+  padding: 1.7em;
+  margin: 1.7em;
+  width: 70%;
+  margin-left: 2vw;
+  border-left-style: solid;
+  border-left-width: 8px;
+  border-left-color: var(--blockquote-border-hex);
+}
+
+.searchResults {
+  background: #f5f5f0;
+  color: #1c1e15;
+}
+
+
 /* width */
 #markdownContent::-webkit-scrollbar {
   width: 8px;
@@ -68,11 +136,11 @@ body {
 
 /* Track */
 #markdownContent::-webkit-scrollbar-track {
-  background: #00000000;
+  background-color: #00000000;
 }
 
 /* Handle on hover */
 #markdownContent::-webkit-scrollbar-thumb {
-  background: var(--foreground-hex);
+  background: var(--thumb-hex);
   border-radius: 12em;
 }
