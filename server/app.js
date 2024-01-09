@@ -23,7 +23,8 @@ const parser = new XMLParser({
 });
 const builder = new XMLBuilder({
   ignoreAttributes: false,
-  attributeNamePrefix: "@_"
+  attributeNamePrefix: "@_",
+  format: true
 });
 
 app.get('/', (req, res) => {
@@ -65,6 +66,7 @@ app.get("/search", (req, res) => {
       title: x.title,
       keywords: [...x.keywords.word],
       summary: grabSummaryOfDocument(x.file),
+      locations: x.locations,
       popularity: x.meta.popularity
     }
   })
@@ -78,7 +80,7 @@ app.get("/search", (req, res) => {
       },
       fuzzy: 0.3
     },
-    storeFields: ["title", "popularity"]
+    storeFields: ["title", "popularity", "locations"]
   })
 
   minisearch.addAll(formData)
@@ -87,7 +89,8 @@ app.get("/search", (req, res) => {
   let searchTitle = results.map(x => {
     return {
       title: x.title,
-      confidence: Math.floor(x.score * 10 * (1 + (x.popularity * 0.1)))
+      confidence: Math.floor(x.score * 10 * (1 + (x.popularity * 0.1))),
+      locations: x.locations
     };
   })
 
@@ -151,6 +154,20 @@ app.post("/forms", (req, res) => {
   fs.writeFileSync(path.join(__dirname, `/database/form-data.xml`), XMLData);
   fs.closeSync(handle);
   res.status(200).send()
+})
+
+
+/**
+ * Datacenter endpoints
+ * 
+ * "Datacenter" is the API that handles management of the data contained within
+ * REST 2.0, including but not limited to "location" (category) data, 
+ * image data, and dictionary data.
+ */
+
+app.get("/datacenter/locations", (req, res) => {
+  var locations = parser.parse(fs.readFileSync(path.join(__dirname, "/database/locations.xml")));
+  res.status(200).send(locations.locations);
 })
 
 app.listen(8080);

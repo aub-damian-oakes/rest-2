@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations>
+    <location name="IT">
+        <branch name="Registers">
+            <branch name="Software" />
+            <branch name="Hardware" />
+        </branch>
+        <branch name="Back Office">
+            <branch name="Red Flags">
+                <branch name="Accounting Period" />
+            </branch>
+            <branch name="General" />
+        </branch>
+    </location>
+    <location name="Accounting">
+        <branch name="Purchase Orders" />
+    </location>
+</locations>

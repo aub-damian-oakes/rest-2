@@ -21,7 +21,7 @@ export default function SearchResults({ results, className, showResults, setShow
         } else {
             cards = results.map((result, i) => {
                 return (
-                    <Link href={`/?form=${encodeURI(result.title)}`}
+                    <Link key={i} href={`/?form=${encodeURI(result.title)}`}
                         className="cursor-pointer flex grow justify-between p-4 searchResults"
                         onClick={() => setShowResults(false)}>
                         <h1 className="text-md">{result.title}</h1>

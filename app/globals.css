@@ -144,3 +144,19 @@ body {
   background: var(--thumb-hex);
   border-radius: 12em;
 }
+
+/* width */
+#ExtraFunctions::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+#ExtraFunctions::-webkit-scrollbar-track {
+  background-color: #00000000;
+}
+
+/* Handle on hover */
+#ExtraFunctions::-webkit-scrollbar-thumb {
+  background: var(--thumb-hex);
+  border-radius: 12em;
+}

@@ -3,7 +3,6 @@
 import markdownit from "markdown-it"
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { BeatLoader } from "react-spinners"
 import $ from "jquery";
 import hljs from 'highlight.js' // https://highlightjs.org
 
@@ -30,6 +29,7 @@ export default function FormContent() {
             method: "GET",
             url: `http://localhost:8080?form=${encodeURI(query) || ""}`,
             success: (form) => {
+                console.log(form.form)
                 setContent(form.form);
             }
         })

@@ -15,8 +15,8 @@ export default function Navbar() {
                 dark:hover:bg-finch-800 hover:bg-finch-500 transition duration-200 ease-out"><p className="m-auto">Home</p></Link>
                 <Link href="/formbuilder" className="flex justify-center col-span-1 text-center 
                 dark:hover:bg-finch-800 hover:bg-finch-500 transition duration-200 ease-out"><p className="m-auto">Formbuilder</p></Link>
-                <Link href="/flowcharts" className="flex justify-center col-span-1 text-center
-                dark:hover:bg-finch-800 hover:bg-finch-500 transition duration-200 ease-out"><p className="m-auto">Flowcharts</p></Link>
+                <Link href="/datacenter" className="flex justify-center col-span-1 text-center
+                dark:hover:bg-finch-800 hover:bg-finch-500 transition duration-200 ease-out"><p className="m-auto">Datacenter</p></Link>
                 <Link href="/diagrams" className="flex justify-center col-span-1 text-center
                 dark:hover:bg-finch-800 hover:bg-finch-500 transition duration-200 ease-out"><p className="m-auto">Diagrams</p></Link>
                 <Link href="/dictionary" className="flex justify-center col-span-1 text-center
